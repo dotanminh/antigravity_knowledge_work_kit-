@@ -37,13 +37,16 @@ body::before{
   scrollbar-width:thin;scrollbar-color:var(--border) transparent;
 }
 .sidebar-brand{
-  padding:0 20px 20px;border-bottom:1px solid var(--border);margin-bottom:16px;
+  padding:16px 20px 16px;border-bottom:1px solid var(--border);margin-bottom:16px;
+  display:flex;align-items:center;gap:14px;
 }
-.sidebar-brand h1{
-  font-size:15px;font-weight:700;color:var(--text-bright);
-  letter-spacing:-0.3px;line-height:1.3;
+.sidebar-brand-logo{
+  width:48px;height:48px;flex-shrink:0;
 }
-.sidebar-brand p{font-size:11px;color:#fbbf24;margin-top:4px;font-weight:600}
+.sidebar-brand-info .doc-label{
+  font-size:12px;color:var(--accent2);font-weight:600;
+}
+.sidebar-brand-info p{font-size:10px;color:#fbbf24;margin-top:3px;font-weight:600}
 .toc-section{
   font-size:10px;font-weight:700;text-transform:uppercase;
   letter-spacing:1.5px;color:var(--accent2);
@@ -92,11 +95,15 @@ h1{font-size:30px;font-weight:800;color:var(--text-bright);margin:48px 0 16px;le
 h1:first-of-type{
   position:sticky;top:0;z-index:40;
   padding:16px 32px;margin:0 -32px 16px;
-  background:#0f1623;
-  color:#f0f6ff;
   font-size:32px;letter-spacing:1px;
   border-bottom:1px solid var(--border);
-  text-shadow:0 0 20px rgba(240,246,255,0.1);
+  color:#e8a838;
+  background:
+    linear-gradient(90deg,#e8a838 0%,#f5d89a 40%,#ffffff 100%),
+    linear-gradient(#0f1623,#0f1623);
+  background-clip:text,padding-box;
+  -webkit-background-clip:text,padding-box;
+  -webkit-text-fill-color:transparent;
 }
 h2{font-size:22px;font-weight:700;color:var(--text-bright);margin:40px 0 14px;padding-top:16px;border-top:1px solid var(--border)}
 h3{font-size:17px;font-weight:600;color:var(--accent2);margin:28px 0 10px}
@@ -202,10 +209,13 @@ tr:hover td{background:rgba(99,102,241,0.06);transition:background 0.15s}
 
 <nav class="sidebar">
   <div class="sidebar-brand">
-    <h1>Antigravity<br>Knowledge Work Kit</h1>
-    <p>15 Skills · 77 Sub-Skills · 69 Workflows</p>
+    <img src="antigravity-logo.png" alt="Antigravity" class="sidebar-brand-logo" style="border-radius:12px">
+    <div class="sidebar-brand-info">
+      <div class="doc-label">Documentation</div>
+      <p>15 Skills · 77 Sub-Skills · 69 Workflows</p>
+    </div>
   </div>
-  <div class="toc-section">Antigravity Knowledge Work Kit - Sổ Tay Hướng Dẫn</div>
+  <div class="toc-section">Nội dung</div>
 <a href="#part-i-nền-tảng-foundation" class="toc-link"><span class="toc-badge">01</span>PART I: NỀN TẢNG (FOUNDATION)</a>
 <a href="#chương-1-giới-thiệu" class="toc-link sub">Chương 1: Giới thiệu</a>
 <a href="#chương-2-kiến-trúc-architecture" class="toc-link sub">Chương 2: Kiến trúc (Architecture)</a>
@@ -249,10 +259,6 @@ tr:hover td{background:rgba(99,102,241,0.06);transition:background 0.15s}
 <p>Tác giả: Minh Đỗ</p>
 </blockquote>
 
-<blockquote>
-<p><strong>⚠️ Disclaimer (Miễn trừ trách nhiệm):</strong></p>
-<p>Bộ toolkit này được chuyển đổi (convert) từ nền tảng Claude (Anthropic) sang nền tảng Antigravity (Google). Trong quá trình chuyển đổi, không thể tránh khỏi những sai sót hoặc một số chức năng có thể chưa hoạt động hoàn toàn chính xác trên nền tảng mới. Người dùng cần tự trải nghiệm, kiểm tra và điều chỉnh cho phù hợp với môi trường làm việc thực tế của mình. Tác giả không chịu trách nhiệm về bất kỳ thiệt hại nào phát sinh từ việc sử dụng tài liệu này. Mọi đóng góp, báo lỗi hoặc đề xuất cải thiện đều được hoan nghênh.</p>
-</blockquote>
 
 <hr>
 
@@ -1076,6 +1082,13 @@ your-project/
 
 <p><strong>Sách này có áp dụng cho platform nào khác ngoài Antigravity không?</strong></p>
 <p>Bộ Skills và Workflows được thiết kế cho nền tảng Antigravity (Google AI IDE) sử dụng cấu trúc <code>.agents/</code>. Tuy nhiên, nội dung chuyên môn trong từng Skill có thể tham khảo cho bất kỳ AI Agent platform nào hỗ trợ MCP.</p>
+
+<hr>
+
+<blockquote>
+<p><strong>⚠️ Disclaimer (Miễn trừ trách nhiệm):</strong></p>
+<p>Bộ toolkit này được chuyển đổi (convert) từ nền tảng Claude (Anthropic) sang nền tảng Antigravity (Google). Trong quá trình chuyển đổi, không thể tránh khỏi những sai sót hoặc một số chức năng có thể chưa hoạt động hoàn toàn chính xác trên nền tảng mới. Người dùng cần tự trải nghiệm, kiểm tra và điều chỉnh cho phù hợp với môi trường làm việc thực tế của mình. Tác giả không chịu trách nhiệm về bất kỳ thiệt hại nào phát sinh từ việc sử dụng tài liệu này. Mọi đóng góp, báo lỗi hoặc đề xuất cải thiện đều được hoan nghênh.</p>
+</blockquote>
 
 <hr>
 
