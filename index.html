@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Antigravity Knowledge Work Kit</title>
+<meta name="description" content="Bo sach huong dan day du cho 15 Skills va 69 Workflows - giup AI Agent tro thanh cong su lam viec thuc thu.">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0B0F1A;--bg-card:#0F172A;--bg-sidebar:#0d1224;
+  --border:#1C2A48;--border-light:#232d45;
+  --text:#B8C5D6;--text-bright:#F1F5F9;--text-dim:#5a6a80;
+  --accent:#6366F1;--accent2:#818CF8;--accent-glow:rgba(99,102,241,0.15);
+  --green:#22c55e;--yellow:#eab308;--red:#ef4444;
+}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{
+  font-family:'Plus Jakarta Sans',system-ui,sans-serif;
+  background:var(--bg);color:var(--text);
+  line-height:1.7;font-size:15px;
+}
+
+/* Top accent line */
+body::before{
+  content:'';position:fixed;top:0;left:0;right:0;height:2px;z-index:100;
+  background:linear-gradient(90deg,#6366f1,#8b5cf6,#a78bfa,#6366f1);
+}
+
+/* Sidebar */
+.sidebar{
+  position:fixed;top:0;left:0;bottom:0;width:280px;
+  background:linear-gradient(180deg,#101830 0%,#0c1225 40%,#0a0f1e 100%);
+  border-right:1px solid var(--border);
+  overflow-y:auto;padding:24px 0;z-index:50;
+  scrollbar-width:thin;scrollbar-color:var(--border) transparent;
+}
+.sidebar-brand{
+  padding:0 20px 20px;border-bottom:1px solid var(--border);margin-bottom:16px;
+}
+.sidebar-brand h1{
+  font-size:15px;font-weight:700;color:var(--text-bright);
+  letter-spacing:-0.3px;line-height:1.3;
+}
+.sidebar-brand p{font-size:11px;color:#fbbf24;margin-top:4px;font-weight:600}
+.toc-section{
+  font-size:10px;font-weight:700;text-transform:uppercase;
+  letter-spacing:1.5px;color:var(--accent2);
+  padding:20px 20px 8px;
+}
+.toc-link{
+  display:flex;align-items:center;gap:10px;
+  padding:7px 20px;font-size:13px;color:#b0bfcf;
+  text-decoration:none;transition:all 0.2s;
+  border-left:2px solid transparent;
+}
+.toc-link:hover{color:#ffffff;background:var(--accent-glow);
+  border-left-color:rgba(99,102,241,0.4)}
+.toc-link.active{
+  color:#ffffff;border-left-color:var(--accent);
+  background:var(--accent-glow);font-weight:600;
+}
+.toc-link.sub{padding-left:52px;font-size:12px;color:#96a5b8}
+.toc-link.sub:hover{color:#e0e7ef}
+.toc-badge{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-width:24px;height:24px;border-radius:6px;
+  background:rgba(99,102,241,0.15);border:1px solid rgba(99,102,241,0.3);
+  font-size:10px;font-weight:700;color:var(--accent2);
+  font-family:'JetBrains Mono',monospace;
+}
+
+/* Main content */
+.main{
+  margin-left:280px;max-width:900px;padding:48px 48px 96px;
+}
+.author-link{
+  position:fixed;top:12px;right:24px;z-index:60;
+  display:flex;align-items:center;gap:8px;
+  padding:6px 14px;border-radius:8px;
+  border:1px solid rgba(251,191,36,0.3);
+  background:rgba(251,191,36,0.08);
+  color:#fbbf24;font-size:12px;font-weight:700;text-decoration:none;
+  transition:all 0.2s;
+}
+.author-link:hover{color:#fde68a;border-color:#fbbf24;background:rgba(251,191,36,0.15)}
+.author-link svg{width:16px;height:16px;fill:currentColor}
+
+/* Typography */
+h1{font-size:30px;font-weight:800;color:var(--text-bright);margin:48px 0 16px;letter-spacing:-0.5px;text-transform:uppercase}
+h1:first-of-type{
+  position:sticky;top:0;z-index:40;
+  padding:16px 32px;margin:0 -32px 16px;
+  background:#0f1623;
+  color:#f0f6ff;
+  font-size:32px;letter-spacing:1px;
+  border-bottom:1px solid var(--border);
+  text-shadow:0 0 20px rgba(240,246,255,0.1);
+}
+h2{font-size:22px;font-weight:700;color:var(--text-bright);margin:40px 0 14px;padding-top:16px;border-top:1px solid var(--border)}
+h3{font-size:17px;font-weight:600;color:var(--accent2);margin:28px 0 10px}
+h4{font-size:15px;font-weight:600;color:var(--text-bright);margin:20px 0 8px}
+p{margin:8px 0}
+hr{border:none;border-top:1px solid var(--border);margin:32px 0}
+strong{color:var(--text-bright);font-weight:600}
+code{
+  font-family:'JetBrains Mono',monospace;font-size:13px;
+  background:rgba(99,102,241,0.1);color:var(--accent2);
+  padding:2px 6px;border-radius:4px;font-size:0.9em;
+  display:inline;white-space:nowrap;
+}
+pre{
+  background:var(--bg-card);border:1px solid var(--border);
+  border-radius:10px;padding:16px 20px;margin:12px 0 16px;
+  overflow-x:auto;
+}
+pre code{background:none;padding:0;color:var(--text);font-size:13px;white-space:pre;display:block}
+blockquote{
+  border-left:3px solid #fbbf24;padding:12px 16px;
+  background:rgba(251,191,36,0.06);border-radius:0 8px 8px 0;
+  margin:12px 0;font-style:italic;color:#fbbf24;
+}
+blockquote p{margin:4px 0}
+ul{margin:8px 0 8px 20px}
+li{margin:4px 0}
+li::marker{color:var(--accent2)}
+del{color:var(--text-dim)}
+
+/* Tables */
+.table-wrap{
+  overflow-x:auto;margin:12px 0 16px;
+  border:1px solid var(--border);border-radius:10px;
+  background:var(--bg-card);
+}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{
+  text-align:left;padding:10px 14px;
+  background:rgba(99,102,241,0.12);
+  color:var(--accent2);font-weight:600;font-size:12px;
+  text-transform:uppercase;letter-spacing:0.5px;
+  border-bottom:1px solid var(--border);
+}
+td{padding:9px 14px;border-bottom:1px solid rgba(28,42,72,0.5)}
+tr:nth-child(even) td{background:rgba(255,255,255,0.02)}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:rgba(99,102,241,0.06);transition:background 0.15s}
+
+/* Numbered list */
+.num-list{display:flex;gap:8px;margin:6px 0}
+.num-list .num{
+  color:var(--accent2);font-weight:700;min-width:24px;
+  font-family:'JetBrains Mono',monospace;
+}
+
+/* Footer */
+.footer{
+  text-align:center;padding:32px;margin-top:48px;
+  border-top:1px solid var(--border);color:var(--text-dim);font-size:12px;
+}
+.footer a{color:var(--accent2);text-decoration:none}
+
+/* Mobile */
+.menu-btn{
+  display:none;position:fixed;top:8px;left:8px;z-index:70;
+  width:40px;height:40px;border-radius:10px;border:1px solid var(--border);
+  background:var(--bg-card);color:var(--text-bright);font-size:20px;
+  cursor:pointer;backdrop-filter:blur(12px);
+}
+/* Scroll to top button */
+.scroll-top{
+  position:fixed;bottom:28px;right:28px;z-index:60;
+  width:44px;height:44px;border-radius:12px;
+  background:rgba(99,102,241,0.15);border:1px solid rgba(99,102,241,0.3);
+  color:var(--accent2);font-size:20px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;transform:translateY(12px);pointer-events:none;
+  transition:all 0.3s ease;
+  backdrop-filter:blur(8px);
+}
+.scroll-top.visible{opacity:1;transform:translateY(0);pointer-events:auto}
+.scroll-top:hover{background:rgba(99,102,241,0.3);color:#ffffff;border-color:var(--accent)}
+
+@media(max-width:768px){
+  .sidebar{transform:translateX(-100%);transition:transform 0.3s;width:260px}
+  .sidebar.open{transform:translateX(0)}
+  .main{margin-left:0;padding:24px 16px 64px}
+  .menu-btn{display:flex;align-items:center;justify-content:center}
+  .author-link{display:none}
+  h1{font-size:22px}h2{font-size:18px}h3{font-size:15px}
+  .scroll-top{bottom:16px;right:16px;width:40px;height:40px}
+}
+</style>
+</head>
+<body>
+
+<button class="menu-btn" onclick="document.querySelector('.sidebar').classList.toggle('open')" aria-label="Menu">&#9776;</button>
+
+<nav class="sidebar">
+  <div class="sidebar-brand">
+    <h1>Antigravity<br>Knowledge Work Kit</h1>
+    <p>15 Skills · 77 Sub-Skills · 69 Workflows</p>
+  </div>
+  <div class="toc-section">Antigravity Knowledge Work Kit - Sổ Tay Hướng Dẫn</div>
+<a href="#part-i-nền-tảng-foundation" class="toc-link"><span class="toc-badge">01</span>PART I: NỀN TẢNG (FOUNDATION)</a>
+<a href="#chương-1-giới-thiệu" class="toc-link sub">Chương 1: Giới thiệu</a>
+<a href="#chương-2-kiến-trúc-architecture" class="toc-link sub">Chương 2: Kiến trúc (Architecture)</a>
+<a href="#chương-3-quick-start-bắt-đầu-nhanh" class="toc-link sub">Chương 3: Quick Start (Bắt đầu nhanh)</a>
+<a href="#part-ii-hướng-dẫn-theo-phòng-ban" class="toc-link"><span class="toc-badge">02</span>PART II: HƯỚNG DẪN THEO PHÒNG BAN</a>
+<a href="#chương-4-phòng-năng-suất-và-tìm-kiếm-productivity-enterprise" class="toc-link sub">Chương 4: Phòng Năng suất và Tìm kiếm (Productivity & Enterprise Search)</a>
+<a href="#chương-5-phòng-kinh-doanh-sales" class="toc-link sub">Chương 5: Phòng Kinh doanh (Sales)</a>
+<a href="#chương-6-phòng-marketing" class="toc-link sub">Chương 6: Phòng Marketing</a>
+<a href="#chương-7-phòng-chăm-sóc-khách-hàng-customer-support" class="toc-link sub">Chương 7: Phòng Chăm sóc Khách hàng (Customer Support)</a>
+<a href="#chương-8-phòng-sản-phẩm-product-management" class="toc-link sub">Chương 8: Phòng Sản phẩm (Product Management)</a>
+<a href="#chương-9-phòng-kỹ-thuật-engineering" class="toc-link sub">Chương 9: Phòng Kỹ thuật (Engineering)</a>
+<a href="#chương-10-phòng-dữ-liệu-data-analytics" class="toc-link sub">Chương 10: Phòng Dữ liệu (Data & Analytics)</a>
+<a href="#chương-11-phòng-thiết-kế-design" class="toc-link sub">Chương 11: Phòng Thiết kế (Design)</a>
+<a href="#chương-12-phòng-tài-chính-finance-accounting" class="toc-link sub">Chương 12: Phòng Tài chính (Finance & Accounting)</a>
+<a href="#chương-13-phòng-pháp-lý-legal" class="toc-link sub">Chương 13: Phòng Pháp lý (Legal)</a>
+<a href="#chương-14-phòng-nhân-sự-và-vận-hành-hr-operations" class="toc-link sub">Chương 14: Phòng Nhân sự và Vận hành (HR & Operations)</a>
+<a href="#part-iii-nâng-cao" class="toc-link"><span class="toc-badge">03</span>PART III: NÂNG CAO</a>
+<a href="#chương-15-phòng-nghiên-cứu-bio-research" class="toc-link sub">Chương 15: Phòng Nghiên cứu (Bio-Research)</a>
+<a href="#chương-16-tùy-chỉnh-và-tạo-skills-mới-plugin-creator" class="toc-link sub">Chương 16: Tùy chỉnh và Tạo Skills mới (Plugin Creator)</a>
+<a href="#part-iv-phụ-lục" class="toc-link"><span class="toc-badge">04</span>PART IV: PHỤ LỤC</a>
+<a href="#phụ-lục-a-bảng-tra-cứu-nhanh-toàn-bộ-skills" class="toc-link sub">Phụ lục A: Bảng tra cứu nhanh toàn bộ Skills</a>
+<a href="#phụ-lục-b-bảng-thuật-ngữ" class="toc-link sub">Phụ lục B: Bảng thuật ngữ</a>
+<a href="#phụ-lục-c-faq-câu-hỏi-thường-gặp" class="toc-link sub">Phụ lục C: FAQ (Câu hỏi thường gặp)</a>
+</nav>
+
+<a href="https://zalo.me/g/igkywu632" target="_blank" class="author-link">
+  <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M24 4C12.95 4 4 12.95 4 24s8.95 20 20 20 20-8.95 20-20S35.05 4 24 4zm8.85 29.15c-.45.5-1.05.85-1.75.85H16.9c-.7 0-1.3-.35-1.75-.85-.45-.5-.6-1.15-.45-1.75l1.2-5.2c.2-.85.95-1.45 1.8-1.45h12.6c.85 0 1.6.6 1.8 1.45l1.2 5.2c.15.6 0 1.25-.45 1.75zM31 22c0 .55-.45 1-1 1h-2v2c0 .55-.45 1-1 1s-1-.45-1-1v-2h-2v2c0 .55-.45 1-1 1s-1-.45-1-1v-2h-2c-.55 0-1-.45-1-1s.45-1 1-1h2v-2c0-.55.45-1 1-1s1 .45 1 1v2h2v-2c0-.55.45-1 1-1s1 .45 1 1v2h2c.55 0 1 .45 1 1zm-7-9c-4.42 0-8 2.69-8 6 0 1.65.81 3.15 2.12 4.28.08.07.13.17.13.28l-.34 1.68c-.05.23.2.4.4.28l1.9-1.02c.12-.06.25-.08.38-.05.97.26 2.01.4 3.1.42h.32c-.06-.33-.1-.67-.1-1.02 0-3.27 3.2-5.92 7.15-5.92.15 0 .29 0 .44.01C30.87 15.16 28.14 13 24 13z"/></svg>
+  Minh Do
+</a>
+
+<button class="scroll-top" id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Scroll to top">
+  &#8679;
+</button>
+
+<main class="main">
+<h1 id="antigravity-knowledge-work-kit---sổ-tay-hướng-dẫn">Antigravity Knowledge Work Kit - Sổ Tay Hướng Dẫn</h1>
+
+<blockquote>
+<p>Tài liệu hướng dẫn đầy đủ cho 15 Skills và 69 Workflows - giúp AI Agent trở thành cộng sự làm việc thực thụ cho từng phòng ban trong doanh nghiệp.</p>
+<p></p>
+<p>Tác giả: Minh Đỗ</p>
+</blockquote>
+
+<blockquote>
+<p><strong>⚠️ Disclaimer (Miễn trừ trách nhiệm):</strong></p>
+<p>Bộ toolkit này được chuyển đổi (convert) từ nền tảng Claude (Anthropic) sang nền tảng Antigravity (Google). Trong quá trình chuyển đổi, không thể tránh khỏi những sai sót hoặc một số chức năng có thể chưa hoạt động hoàn toàn chính xác trên nền tảng mới. Người dùng cần tự trải nghiệm, kiểm tra và điều chỉnh cho phù hợp với môi trường làm việc thực tế của mình. Tác giả không chịu trách nhiệm về bất kỳ thiệt hại nào phát sinh từ việc sử dụng tài liệu này. Mọi đóng góp, báo lỗi hoặc đề xuất cải thiện đều được hoan nghênh.</p>
+</blockquote>
+
+<hr>
+
+<h2 id="part-i-nền-tảng-foundation">PART I: NỀN TẢNG (FOUNDATION)</h2>
+
+<hr>
+
+<h3 id="chương-1-giới-thiệu">Chương 1: Giới thiệu</h3>
+
+<h4 id="antigravity-knowledge-work-kit-là-gì">Antigravity Knowledge Work Kit là gì?</h4>
+
+<p>Antigravity Knowledge Work Kit là bộ công cụ giúp AI Agent làm việc chuyên nghiệp trong môi trường doanh nghiệp. Thay vì chỉ trả lời câu hỏi đơn giản, AI Agent được trang bị <strong>15 Skills (kỹ năng chuyên môn)</strong> và <strong>69 Workflows (quy trình thực thi)</strong> để xử lý các tác vụ phức tạp như:</p>
+
+<ul>
+<li>Quản lý Sales pipeline (phễu bán hàng)</li>
+<li>Triage (phân loại) ticket hỗ trợ khách hàng</li>
+<li>Chuẩn bị legal briefs (tóm tắt pháp lý)</li>
+<li>Phân tích financial variance (chênh lệch tài chính)</li>
+<li>Viết feature specs (tiêu chuẩn tính năng sản phẩm)</li>
+</ul>
+
+<h4 id="ai-nên-dùng">Ai nên dùng?</h4>
+
+<div class="table-wrap"><table><thead><tr><th>Đối tượng</th><th>Lợi ích</th></tr></thead><tbody>
+<tr><td>Sales teams</td><td>Account research (nghiên cứu khách hàng), call prep (chuẩn bị cuộc gọi), outreach drafting (soạn nội dung tiếp cận)</td></tr>
+<tr><td>Marketing teams</td><td>Content creation (sáng tạo nội dung), campaign planning (lập kế hoạch chiến dịch), SEO audit (kiểm tra SEO)</td></tr>
+<tr><td>Engineering teams</td><td>Code review (đánh giá code), incident response (xử lý sự cố), architecture decisions (quyết định kiến trúc)</td></tr>
+<tr><td>Finance teams</td><td>Journal entries (bút toán), reconciliation (đối soát), variance analysis (phân tích chênh lệch)</td></tr>
+<tr><td>HR teams</td><td>Onboarding (đào tạo nhân viên mới), performance reviews (đánh giá hiệu suất), comp analysis (phân tích lương thưởng)</td></tr>
+<tr><td>Legal teams</td><td>Contract review (rà soát hợp đồng), NDA triage (phân loại NDA), compliance checks (kiểm tra tuân thủ)</td></tr>
+<tr><td>Product teams</td><td>Feature specs (đặc tả tính năng), roadmap planning (lập kế hoạch phát triển), user research (nghiên cứu người dùng)</td></tr>
+<tr><td>Operations teams</td><td>Process documentation (tài liệu quy trình), vendor management (quản lý nhà cung cấp), capacity planning (lập kế hoạch năng lực)</td></tr>
+<tr><td>Data teams</td><td>SQL queries, data visualization (trực quan hóa dữ liệu), dashboard building (xây dựng bảng điều khiển)</td></tr>
+<tr><td>Design teams</td><td>Design critique (phê bình thiết kế), accessibility audits (kiểm tra khả năng truy cập), UX writing (viết UX)</td></tr>
+</tbody></table></div>
+
+<h4 id="bố-cục-cuốn-sách">Bố cục cuốn sách</h4>
+
+<p>Cuốn sách được chia thành 4 phần:</p>
+
+<ul>
+<li><strong>Part I - Nền tảng</strong>: Giới thiệu, kiến trúc hệ thống, hướng dẫn khởi động nhanh</li>
+<li><strong>Part II - Phòng ban</strong>: Hướng dẫn chi tiết theo từng phòng ban, mỗi chương là một phòng ban với đầy đủ Skills, Workflows và cách sử dụng thực tế</li>
+<li><strong>Part III - Nâng cao</strong>: Tùy chỉnh Skills, tạo Skills mới, quản lý hệ thống</li>
+<li><strong>Part IV - Phụ lục</strong>: Bảng tra cứu nhanh, bảng thuật ngữ, FAQ</li>
+</ul>
+
+<hr>
+
+<h3 id="chương-2-kiến-trúc-architecture">Chương 2: Kiến trúc (Architecture)</h3>
+
+<h4 id="3-thành-phần-cốt-lõi">3 thành phần cốt lõi</h4>
+
+<p>Antigravity Knowledge Work Kit xây dựng trên 3 thành phần chính:</p>
+
+<p class="num-list"><span class="num">1.</span> <strong>Skills</strong> - Bộ kỹ năng chuyên môn mà AI Agent có thể sử dụng. Mỗi Skill gồm nhiều Sub-Skills (kỹ năng con) chuyên biệt.</p>
+<p class="num-list"><span class="num">2.</span> <strong>Workflows</strong> - Quy trình thực thi từng bước, được kích hoạt qua slash commands (lệnh gạch chéo) như <code>/sales-call-summary</code> hoặc bằng ngôn ngữ tự nhiên trên Antigravity.</p>
+<p class="num-list"><span class="num">3.</span> <strong>Connectors</strong> - Kết nối với các công cụ bên ngoài qua MCP (Model Context Protocol) servers như Slack, Gmail, Jira, Notion, Salesforce.</p>
+
+<h4 id="cấu-trúc-thư-mục">Cấu trúc thư mục</h4>
+
+<pre><code>
+.agents/
+├── skills/                    ← Thư mục chứa Skills
+│   └── skill-name/
+│       ├── SKILL.md           ← File chính (&lt; 150 dòng)
+│       ├── references/        ← Tài liệu chi tiết
+│       └── scripts/           ← Script tiện ích
+├── workflows/                 ← Thư mục chứa Workflows
+│   └── workflow-name.md       ← Quy trình từng bước
+</code></pre>
+
+<h4 id="3-tier-progressive-disclosure-hệ-thống-tiết-lộ-dần-3-tầng">3-Tier Progressive Disclosure (hệ thống tiết lộ dần 3 tầng)</h4>
+
+<p>Hệ thống được thiết kế theo nguyên tắc Progressive Disclosure (tiết lộ dần) để tối ưu token usage (lượng token sử dụng):</p>
+
+<div class="table-wrap"><table><thead><tr><th>Tầng</th><th>File</th><th>Mục đích</th></tr></thead><tbody>
+<tr><td>Tầng 1</td><td>YAML frontmatter</td><td>Agent đọc đầu tiên: tên, mô tả ngắn</td></tr>
+<tr><td>Tầng 2</td><td>SKILL.md (< 150 dòng)</td><td>Hướng dẫn cốt lõi, bảng Sub-Skills, trigger conditions (điều kiện kích hoạt)</td></tr>
+<tr><td>Tầng 3</td><td>references/*.md</td><td>Chi tiết chuyên sâu, chỉ đọc khi cần</td></tr>
+</tbody></table></div>
+
+<h4 id="memory-management-quản-lý-bộ-nhớ">Memory Management (Quản lý bộ nhớ)</h4>
+
+<p>Hệ thống Productivity Skill bao gồm cơ chế Memory Management giúp AI Agent nhớ ngữ cảnh làm việc. Trên nền tảng Antigravity, file <code>GEMINI.md</code> đóng vai trò hot cache (bộ nhớ nóng):</p>
+
+<pre><code>
+GEMINI.md          ← Hot cache (~30 người, ~30 thuật ngữ, dự án đang làm)
+memory/
+  glossary.md      ← Bảng giải mã thuật ngữ nội bộ đầy đủ
+  people/          ← Hồ sơ chi tiết từng người
+  projects/        ← Chi tiết dự án
+  context/         ← Công ty, team, công cụ
+</code></pre>
+
+<p><code>GEMINI.md</code> phủ khoảng 90% nhu cầu giải mã hàng ngày. Thư mục <code>memory/</code> cung cấp độ sâu không giới hạn khi cần.</p>
+
+<hr>
+
+<h3 id="chương-3-quick-start-bắt-đầu-nhanh">Chương 3: Quick Start (Bắt đầu nhanh)</h3>
+
+<h4 id="bước-1-cấu-trúc-thư-mục">Bước 1: Cấu trúc thư mục</h4>
+
+<p>Đảm bảo thư mục dự án của bạn có cấu trúc <code>.agents/</code> đúng chuẩn:</p>
+
+<pre><code>
+your-project/
+├── .agents/
+│   ├── skills/        ← Chứa tất cả Skills
+│   └── workflows/     ← Chứa tất cả Workflows
+├── GEMINI.md          ← Hot cache cho Memory Management
+└── TASKS.md           ← File quản lý công việc
+</code></pre>
+
+<h4 id="bước-2-cấu-hình-connectors">Bước 2: Cấu hình Connectors</h4>
+
+<p>Mỗi Skill có thể kết nối với các công cụ bên ngoài qua MCP servers. Xem file <code>references/connectors.md</code> trong từng Skill để biết cách cấu hình. Các connector phổ biến:</p>
+
+<div class="table-wrap"><table><thead><tr><th>Loại</th><th>Công cụ hỗ trợ</th></tr></thead><tbody>
+<tr><td>Chat</td><td>Slack, Microsoft Teams</td></tr>
+<tr><td>Email</td><td>Microsoft 365, Gmail</td></tr>
+<tr><td>Calendar</td><td>Microsoft 365, Google Calendar</td></tr>
+<tr><td>Knowledge base</td><td>Notion, Confluence, Guru</td></tr>
+<tr><td>Project tracker</td><td>Asana, Linear, Jira, Monday, ClickUp</td></tr>
+<tr><td>CRM</td><td>Salesforce, HubSpot</td></tr>
+</tbody></table></div>
+
+<h4 id="bước-3-chạy-workflow-đầu-tiên">Bước 3: Chạy Workflow đầu tiên</h4>
+
+<p>Trên Antigravity, bạn có thể kích hoạt Workflow bằng ngôn ngữ tự nhiên:</p>
+
+<ul>
+<li>"Hãy khởi tạo hệ thống productivity cho tôi" → Chạy workflow <code>productivity-start</code></li>
+<li>"Tôi cần triage ticket này" → Chạy workflow <code>customer-support-triage</code></li>
+<li>"Viết feature spec cho tính năng mới" → Chạy workflow <code>product-management-write-spec</code></li>
+</ul>
+
+<h4 id="bước-4-sử-dụng-skills-tự-nhiên">Bước 4: Sử dụng Skills tự nhiên</h4>
+
+<p>Sau khi đã thiết lập, bạn chỉ cần nói chuyện bình thường với AI Agent. Agent sẽ tự động nhận diện Skill phù hợp dựa trên trigger conditions. Ví dụ:</p>
+
+<ul>
+<li>"Review đoạn code này giúp tôi" → Agent kích hoạt Engineering > code-review</li>
+<li>"Phân tích đối thủ cạnh tranh ABC" → Agent kích hoạt Marketing > competitive-analysis</li>
+<li>"Chuẩn bị cho cuộc gọi bán hàng với công ty XYZ" → Agent kích hoạt Sales > call-prep</li>
+</ul>
+
+<hr>
+
+<h2 id="part-ii-hướng-dẫn-theo-phòng-ban">PART II: HƯỚNG DẪN THEO PHÒNG BAN</h2>
+
+<hr>
+
+<h3 id="chương-4-phòng-năng-suất-và-tìm-kiếm-productivity-enterprise">Chương 4: Phòng Năng suất và Tìm kiếm (Productivity &amp; Enterprise Search)</h3>
+
+<p>Chương này dành cho <strong>tất cả nhân viên</strong> trong tổ chức, không giới hạn phòng ban cụ thể.</p>
+
+<h4 id="41-productivity-skill">4.1 Productivity Skill</h4>
+
+<blockquote>
+<p>Quản lý công việc, lập kế hoạch ngày, và xây dựng bộ nhớ ngữ cảnh quan trọng. Đồng bộ với calendar, email, chat để tổ chức mọi thứ.</p>
+</blockquote>
+
+<p><strong>Mục đích</strong>: Biến AI Agent thành cộng sự làm việc hiểu được ngôn ngữ nội bộ của tổ chức.</p>
+
+<h5 id="task-management-quản-lý-công-việc">Task Management (Quản lý công việc)</h5>
+
+<p>File <code>TASKS.md</code> trong thư mục dự án dùng để theo dõi công việc:</p>
+
+<pre><code class="language-markdown">
+# Tasks
+## Active
+- [ ] **Hoàn thành báo cáo Q1** - cho sếp Hùng, due 15/03
+## Waiting On
+- [ ] **Feedback thiết kế** - chờ team Design, gửi 10/03
+## Someday
+- [ ] **Tối ưu quy trình CI/CD** - khi có thời gian
+## Done
+- [x] ~~Setup môi trường staging~~ (08/03)
+</code></pre>
+
+<div class="table-wrap"><table><thead><tr><th>Bạn nói</th><th>Agent làm</th></tr></thead><tbody>
+<tr><td>"Việc gì đang cần làm?"</td><td>Đọc và tóm tắt Active + Waiting On</td></tr>
+<tr><td>"Thêm việc mới" hoặc "nhớ làm"</td><td>Thêm vào Active với format <code>- [ ]</code></td></tr>
+<tr><td>"Xong rồi" hoặc "hoàn thành"</td><td>Đánh dấu <code>[x]</code>, chuyển sang Done</td></tr>
+<tr><td>"Nhớ rằng X là Y"</td><td>Lưu vào memory</td></tr>
+</tbody></table></div>
+
+<h5 id="memory-management-quản-lý-bộ-nhớ">Memory Management (Quản lý bộ nhớ)</h5>
+
+<p>Hệ thống memory giúp Agent hiểu ngữ cảnh nội bộ mà không cần giải thích lại mỗi lần. Quy trình tra cứu:</p>
+
+<p class="num-list"><span class="num">1.</span> Kiểm tra <code>GEMINI.md</code> (hot cache) → phủ hầu hết trường hợp</p>
+<p class="num-list"><span class="num">2.</span> Tìm trong <code>memory/glossary.md</code> → bảng thuật ngữ đầy đủ</p>
+<p class="num-list"><span class="num">3.</span> Kiểm tra <code>memory/people/</code>, <code>memory/projects/</code> → chi tiết chuyên sâu</p>
+<p class="num-list"><span class="num">4.</span> Hỏi người dùng → thuật ngữ chưa biết, rồi ghi nhớ lại</p>
+
+<h5 id="connectors-hỗ-trợ">Connectors hỗ trợ</h5>
+
+<div class="table-wrap"><table><thead><tr><th>Loại</th><th>Công cụ</th></tr></thead><tbody>
+<tr><td>Chat</td><td>Slack, Microsoft Teams</td></tr>
+<tr><td>Email</td><td>Microsoft 365, Gmail</td></tr>
+<tr><td>Calendar</td><td>Microsoft 365, Google Calendar</td></tr>
+<tr><td>Knowledge base</td><td>Notion, Confluence, Guru</td></tr>
+<tr><td>Project tracker</td><td>Asana, Linear, Jira, Monday, ClickUp</td></tr>
+</tbody></table></div>
+
+<h5 id="workflows-liên-quan">Workflows liên quan</h5>
+
+<ul>
+<li><code>/productivity-start</code> - Khởi tạo hệ thống lần đầu: kiểm tra file có sẵn, tạo mới <code>TASKS.md</code> và <code>GEMINI.md</code>, hướng dẫn sử dụng</li>
+<li><code>/productivity-update</code> - Cập nhật và đồng bộ: đồng bộ tasks từ các nguồn, làm mới memory từ hoạt động gần nhất</li>
+</ul>
+
+<hr>
+
+<h4 id="42-enterprise-search-skill">4.2 Enterprise Search Skill</h4>
+
+<blockquote>
+<p>Tìm kiếm xuyên suốt tất cả công cụ doanh nghiệp trong một chỗ.</p>
+</blockquote>
+
+<p><strong>Mục đích</strong>: Tìm bất kỳ thứ gì trên email, chat, tài liệu, wiki mà không cần chuyển đổi giữa các ứng dụng.</p>
+
+<h5 id="sub-skills">Sub-Skills</h5>
+
+<div class="table-wrap"><table><thead><tr><th>Sub-Skill</th><th>Mô tả</th></tr></thead><tbody>
+<tr><td>search-strategy</td><td>Phân tách câu hỏi tự nhiên thành nhiều truy vấn mục tiêu cho từng nguồn dữ liệu</td></tr>
+<tr><td>knowledge-synthesis</td><td>Tổng hợp kết quả từ nhiều nguồn, loại bỏ trùng lặp, ghi nguồn</td></tr>
+<tr><td>source-management</td><td>Quản lý các nguồn dữ liệu đã kết nối, hướng dẫn kết nối thêm</td></tr>
+</tbody></table></div>
+
+<h5 id="workflows-liên-quan">Workflows liên quan</h5>
+
+<ul>
+<li><code>/enterprise-search-search</code> - Tìm kiếm trên tất cả nguồn đã kết nối</li>
+<li><code>/enterprise-search-digest</code> - Tạo bản tổng hợp hoạt động theo ngày hoặc tuần</li>
+</ul>
+
+<hr>
+
+<h3 id="chương-5-phòng-kinh-doanh-sales">Chương 5: Phòng Kinh doanh (Sales)</h3>
+
+<p>Chương này dành cho <strong>đội ngũ Sales, Business Development và Account Management</strong>.</p>
+
+<h4 id="sales-skill">Sales Skill</h4>
+
+<blockquote>
+<p>Tìm kiếm khách hàng tiềm năng, soạn nội dung tiếp cận, xây dựng chiến lược deal nhanh hơn. Chuẩn bị cuộc gọi, quản lý pipeline, viết thông điệp cá nhân hóa.</p>
+</blockquote>
+
+<h5 id="sub-skills">Sub-Skills</h5>
+
+<div class="table-wrap"><table><thead><tr><th>Sub-Skill</th><th>Mô tả</th></tr></thead><tbody>
+<tr><td>account-research</td><td>Nghiên cứu công ty hoặc cá nhân, thu thập sales intel (thông tin bán hàng) hữu ích. Hoạt động độc lập với web search, mạnh hơn khi kết nối CRM</td></tr>
+<tr><td>call-prep</td><td>Chuẩn bị cuộc gọi bán hàng với ngữ cảnh tài khoản, nghiên cứu người tham dự, và agenda (chương trình) đề xuất</td></tr>
+<tr><td>competitive-intelligence</td><td>Nghiên cứu đối thủ cạnh tranh và xây dựng battlecard (thẻ đối chiến) tương tác dạng HTML</td></tr>
+<tr><td>create-an-asset</td><td>Tạo tài liệu bán hàng tùy chỉnh: landing pages, decks, one-pagers, workflow demos từ ngữ cảnh deal</td></tr>
+<tr><td>daily-briefing</td><td>Bắt đầu ngày với bản tóm tắt bán hàng ưu tiên hóa: meetings, to-dos, updates</td></tr>
+<tr><td>draft-outreach</td><td>Nghiên cứu prospect (khách hàng tiềm năng) rồi soạn nội dung tiếp cận cá nhân hóa</td></tr>
+</tbody></table></div>
+
+<h5 id="workflows-liên-quan">Workflows liên quan</h5>
+
+<div class="table-wrap"><table><thead><tr><th>Workflow</th><th>Mô tả</th></tr></thead><tbody>
+<tr><td><code>/sales-call-summary</code></td><td>Xử lý ghi chú hoặc transcript cuộc gọi: trích xuất action items, soạn email follow-up, tạo tóm tắt nội bộ</td></tr>
+<tr><td><code>/sales-forecast</code></td><td>Tạo dự báo doanh số có trọng số với 3 kịch bản best/likely/worst, phân tích commit vs upside, gap analysis</td></tr>
+<tr><td><code>/sales-pipeline-review</code></td><td>Phân tích sức khỏe pipeline: ưu tiên deals, đánh dấu rủi ro, lập kế hoạch hành động tuần</td></tr>
+</tbody></table></div>
+
+<h5 id="cách-sử-dụng-thực-tế">Cách sử dụng thực tế</h5>
+
+<p><strong>Tình huống 1: Chuẩn bị cuộc gọi bán hàng</strong></p>
+<ul>
+<li>Bạn nói: "Chuẩn bị cho cuộc gọi với công ty ABC ngày mai"</li>
+<li>Agent kích hoạt <code>call-prep</code>: nghiên cứu công ty, tìm hiểu người tham dự trên LinkedIn, đề xuất agenda và talking points</li>
+</ul>
+
+<p><strong>Tình huống 2: Soạn email tiếp cận</strong></p>
+<ul>
+<li>Bạn nói: "Soạn email giới thiệu sản phẩm cho anh Hùng ở công ty XYZ"</li>
+<li>Agent kích hoạt <code>draft-outreach</code>: nghiên cứu XYZ, tìm pain points phù hợp, soạn email cá nhân hóa</li>
+</ul>
+
+<p><strong>Tình huống 3: Review pipeline cuối tuần</strong></p>
+<ul>
+<li>Bạn nói: "Review pipeline của tôi tuần này"</li>
+<li>Agent kích hoạt <code>sales-pipeline-review</code>: phân tích từng deal, gắn cờ rủi ro, đề xuất next actions</li>
+</ul>
+
+<hr>
+
+<h3 id="chương-6-phòng-marketing">Chương 6: Phòng Marketing</h3>
+
+<p>Chương này dành cho <strong>đội ngũ Marketing, Content, Brand và Growth</strong>.</p>
+
+<h4 id="marketing-skill">Marketing Skill</h4>
+
+<blockquote>
+<p>Sáng tạo nội dung, lập kế hoạch chiến dịch, phân tích hiệu suất trên các kênh marketing. Duy trì tính nhất quán brand voice, theo dõi đối thủ, và báo cáo hiệu quả.</p>
+</blockquote>
+
+<h5 id="sub-skills">Sub-Skills</h5>
+
+<div class="table-wrap"><table><thead><tr><th>Sub-Skill</th><th>Mô tả</th></tr></thead><tbody>
+<tr><td>brand-voice</td><td>Áp dụng và enforcement (thực thi) brand voice, style guide, messaging pillars xuyên suốt nội dung</td></tr>
+<tr><td>campaign-planning</td><td>Lập kế hoạch chiến dịch marketing với objectives (mục tiêu), audience segmentation (phân khúc đối tượng), channel strategy (chiến lược kênh), content calendars và success metrics (chỉ số thành công)</td></tr>
+<tr><td>competitive-analysis</td><td>Nghiên cứu đối thủ cạnh tranh và so sánh positioning (định vị), messaging, content strategy, market presence (sự hiện diện thị trường)</td></tr>
+<tr><td>content-creation</td><td>Soạn nội dung marketing đa kênh: blog posts, social media, email newsletters, landing pages, press releases, case studies</td></tr>
+<tr><td>performance-analytics</td><td>Phân tích hiệu suất marketing với key metrics (chỉ số chính), trend analysis (phân tích xu hướng), optimization recommendations (đề xuất tối ưu)</td></tr>
+</tbody></table></div>
+
+<h5 id="workflows-liên-quan">Workflows liên quan</h5>
+
+<div class="table-wrap"><table><thead><tr><th>Workflow</th><th>Mô tả</th></tr></thead><tbody>
+<tr><td><code>/marketing-brand-review</code></td><td>Đánh giá nội dung theo brand voice, style guide, messaging pillars</td></tr>
+<tr><td><code>/marketing-campaign-plan</code></td><td>Tạo campaign brief với objectives, channels, content calendar, success metrics</td></tr>
+<tr><td><code>/marketing-competitive-brief</code></td><td>Nghiên cứu đối thủ và tạo positioning comparison</td></tr>
+<tr><td><code>/marketing-draft-content</code></td><td>Soạn blog posts, social media, email, landing pages, press releases, case studies</td></tr>
+<tr><td><code>/marketing-email-sequence</code></td><td>Thiết kế chuỗi email cho nurture flows, onboarding, drip campaigns</td></tr>
+<tr><td><code>/marketing-performance-report</code></td><td>Xây dựng báo cáo hiệu suất marketing với metrics, trends, optimization</td></tr>
+<tr><td><code>/marketing-seo-audit</code></td><td>Kiểm tra SEO toàn diện: keyword research, on-page analysis, content gaps, technical checks</td></tr>
+</tbody></table></div>
+
+<h5 id="cách-sử-dụng-thực-tế">Cách sử dụng thực tế</h5>
+
+<p><strong>Tình huống 1: Soạn bài blog</strong></p>
+<ul>
+<li>Bạn nói: "Viết bài blog về xu hướng AI trong ngành bán lẻ"</li>
+<li>Agent kích hoạt <code>content-creation</code>: nghiên cứu chủ đề, soạn bài theo brand voice, tối ưu SEO</li>
+</ul>
+
+<p><strong>Tình huống 2: Lập kế hoạch chiến dịch</strong></p>
+<ul>
+<li>Bạn nói: "Lên kế hoạch chiến dịch ra mắt sản phẩm mới tháng 4"</li>
+<li>Agent kích hoạt <code>campaign-planning</code>: xác định mục tiêu, phân khúc đối tượng, chọn kênh, lập content calendar</li>
+</ul>
+
+<hr>
+
+<h3 id="chương-7-phòng-chăm-sóc-khách-hàng-customer-support">Chương 7: Phòng Chăm sóc Khách hàng (Customer Support)</h3>
+
+<p>Chương này dành cho <strong>đội ngũ Customer Support, Customer Success và Help Desk</strong>.</p>
+
+<h4 id="customer-support-skill">Customer Support Skill</h4>
+
+<blockquote>
+<p>Phân loại ticket, soạn phản hồi, escalate (leo thang) vấn đề, xây dựng knowledge base. Nghiên cứu ngữ cảnh khách hàng và chuyển đổi các vấn đề đã giải quyết thành nội dung self-service.</p>
+</blockquote>
+
+<h5 id="sub-skills">Sub-Skills</h5>
+
+<div class="table-wrap"><table><thead><tr><th>Sub-Skill</th><th>Mô tả</th></tr></thead><tbody>
+<tr><td>customer-research</td><td>Nghiên cứu câu hỏi khách hàng bằng cách tìm kiếm qua tài liệu, knowledge bases, và các nguồn đã kết nối, rồi tổng hợp câu trả lời</td></tr>
+<tr><td>escalation</td><td>Cấu trúc và đóng gói escalation cho engineering, product hoặc leadership với đầy đủ ngữ cảnh, bước tái tạo, và business impact</td></tr>
+<tr><td>knowledge-management</td><td>Viết và duy trì bài viết knowledge base từ các vấn đề hỗ trợ đã giải quyết</td></tr>
+<tr><td>response-drafting</td><td>Soạn phản hồi chuyên nghiệp, empathetic (đồng cảm) cho khách hàng, phù hợp với tình huống, mức độ khẩn cấp và kênh giao tiếp</td></tr>
+<tr><td>ticket-triage</td><td>Phân loại ticket theo danh mục vấn đề, gán priority (mức ưu tiên) từ P1 đến P4, và đề xuất routing (phân luồng)</td></tr>
+</tbody></table></div>
+
+<h5 id="workflows-liên-quan">Workflows liên quan</h5>
+
+<div class="table-wrap"><table><thead><tr><th>Workflow</th><th>Mô tả</th></tr></thead><tbody>
+<tr><td><code>/customer-support-triage</code></td><td>Phân loại và ưu tiên ticket hoặc vấn đề khách hàng</td></tr>
+<tr><td><code>/customer-support-draft-response</code></td><td>Soạn phản hồi chuyên nghiệp phù hợp tình huống và mối quan hệ</td></tr>
+<tr><td><code>/customer-support-escalate</code></td><td>Đóng gói escalation cho engineering, product hoặc leadership</td></tr>
+<tr><td><code>/customer-support-research</code></td><td>Nghiên cứu đa nguồn về câu hỏi khách hàng hoặc chủ đề</td></tr>
+<tr><td><code>/customer-support-kb-article</code></td><td>Soạn bài knowledge base từ vấn đề đã giải quyết</td></tr>
+</tbody></table></div>
+
+<h5 id="cách-sử-dụng-thực-tế">Cách sử dụng thực tế</h5>
+
+<p><strong>Tình huống: Nhận ticket mới</strong></p>
+<p class="num-list"><span class="num">1.</span> Bạn nói: "Triage ticket này: khách hàng báo không thể đăng nhập từ 2 ngày nay"</p>
+<p class="num-list"><span class="num">2.</span> Agent kích hoạt <code>ticket-triage</code>: phân loại P2, gắn nhãn Authentication, routing tới team Backend</p>
+<p class="num-list"><span class="num">3.</span> Bạn nói: "Soạn phản hồi cho khách"</p>
+<p class="num-list"><span class="num">4.</span> Agent kích hoạt <code>response-drafting</code>: soạn email xin lỗi, hướng dẫn workaround, cam kết timeline</p>
+
+<hr>
+
+<h3 id="chương-8-phòng-sản-phẩm-product-management">Chương 8: Phòng Sản phẩm (Product Management)</h3>
+
+<p>Chương này dành cho <strong>Product Managers, Product Owners và Product Analysts</strong>.</p>
+
+<h4 id="product-management-skill">Product Management Skill</h4>
+
+<blockquote>
+<p>Viết feature specs, lập kế hoạch roadmap, tổng hợp user research nhanh hơn. Cập nhật stakeholders và theo dõi bối cảnh cạnh tranh.</p>
+</blockquote>
+
+<h5 id="sub-skills">Sub-Skills</h5>
+
+<div class="table-wrap"><table><thead><tr><th>Sub-Skill</th><th>Mô tả</th></tr></thead><tbody>
+<tr><td>competitive-analysis</td><td>Phân tích đối thủ với feature comparison matrices (bảng so sánh tính năng), positioning analysis (phân tích định vị), và strategic implications (hàm ý chiến lược)</td></tr>
+<tr><td>feature-spec</td><td>Viết PRD (Product Requirements Document) có cấu trúc với problem statements, user stories, requirements, và success metrics</td></tr>
+<tr><td>metrics-tracking</td><td>Xác định, theo dõi, phân tích product metrics với frameworks cho goal setting (thiết lập mục tiêu) và dashboard design</td></tr>
+<tr><td>roadmap-management</td><td>Lập kế hoạch và ưu tiên roadmap sử dụng frameworks như RICE, MoSCoW, ICE</td></tr>
+<tr><td>stakeholder-comms</td><td>Soạn stakeholder updates phù hợp từng đối tượng: executives, engineering, customers, cross-functional partners</td></tr>
+<tr><td>user-research-synthesis</td><td>Tổng hợp user research định tính và định lượng thành structured insights và opportunity areas</td></tr>
+</tbody></table></div>
+
+<h5 id="workflows-liên-quan">Workflows liên quan</h5>
+
+<div class="table-wrap"><table><thead><tr><th>Workflow</th><th>Mô tả</th></tr></thead><tbody>
+<tr><td><code>/product-management-write-spec</code></td><td>Viết feature spec hoặc PRD từ problem statement hoặc ý tưởng</td></tr>
+<tr><td><code>/product-management-roadmap-update</code></td><td>Cập nhật, tạo hoặc sắp xếp lại roadmap</td></tr>
+<tr><td><code>/product-management-sprint-planning</code></td><td>Lập kế hoạch sprint: scope, ước lượng capacity, đặt goals</td></tr>
+<tr><td><code>/product-management-synthesize-research</code></td><td>Tổng hợp user research từ interviews, surveys, feedback</td></tr>
+<tr><td><code>/product-management-competitive-brief</code></td><td>Tạo bản phân tích cạnh tranh cho đối thủ hoặc lĩnh vực tính năng</td></tr>
+<tr><td><code>/product-management-metrics-review</code></td><td>Đánh giá product metrics với trend analysis và actionable insights</td></tr>
+<tr><td><code>/product-management-stakeholder-update</code></td><td>Tạo báo cáo cho stakeholders phù hợp đối tượng và tần suất</td></tr>
+</tbody></table></div>
+
+<h5 id="cách-sử-dụng-thực-tế">Cách sử dụng thực tế</h5>
+
+<p><strong>Tình huống: Viết spec tính năng mới</strong></p>
+<ul>
+<li>Bạn nói: "Viết spec cho tính năng thanh toán bằng QR code"</li>
+<li>Agent kích hoạt <code>feature-spec</code>: thu thập requirements, viết problem statement, liệt kê user stories, xác định success metrics, đề xuất acceptance criteria</li>
+</ul>
+
+<hr>
+
+<h3 id="chương-9-phòng-kỹ-thuật-engineering">Chương 9: Phòng Kỹ thuật (Engineering)</h3>
+
+<p>Chương này dành cho <strong>Software Engineers, DevOps, QA Engineers và Technical Leads</strong>.</p>
+
+<h4 id="engineering-skill">Engineering Skill</h4>
+
+<blockquote>
+<p>Tối ưu quy trình kỹ thuật: standups, code review, architecture decisions (quyết định kiến trúc), incident response (xử lý sự cố), và technical documentation. Hoạt động với các công cụ hiện có hoặc độc lập.</p>
+</blockquote>
+
+<h5 id="sub-skills">Sub-Skills</h5>
+
+<div class="table-wrap"><table><thead><tr><th>Sub-Skill</th><th>Mô tả</th></tr></thead><tbody>
+<tr><td>code-review</td><td>Đánh giá code về bugs, security vulnerabilities (lỗ hổng bảo mật), performance issues (vấn đề hiệu suất), và maintainability (khả năng bảo trì)</td></tr>
+<tr><td>documentation</td><td>Viết và duy trì technical documentation. Trigger: "viết docs cho", "tạo README", "document cái này"</td></tr>
+<tr><td>incident-response</td><td>Xử lý và quản lý sự cố production. Trigger: "có sự cố", "production đang down", "có lỗi gì đó"</td></tr>
+<tr><td>system-design</td><td>Thiết kế systems, services, và architectures. Trigger: "thiết kế hệ thống cho", "nên architect thế nào"</td></tr>
+<tr><td>tech-debt</td><td>Xác định, phân loại, và ưu tiên technical debt (nợ kỹ thuật). Trigger: "tech debt", "nên refactor cái gì"</td></tr>
+<tr><td>testing-strategy</td><td>Thiết kế test strategies và test plans. Trigger: "nên test thế nào", "viết tests cho"</td></tr>
+</tbody></table></div>
+
+<h5 id="workflows-liên-quan">Workflows liên quan</h5>
+
+<div class="table-wrap"><table><thead><tr><th>Workflow</th><th>Mô tả</th></tr></thead><tbody>
+<tr><td><code>/engineering-standup</code></td><td>Tạo standup update từ hoạt động gần đây</td></tr>
+<tr><td><code>/engineering-review</code></td><td>Đánh giá code changes về security, performance, correctness</td></tr>
+<tr><td><code>/engineering-architecture</code></td><td>Tạo hoặc đánh giá ADR (Architecture Decision Record)</td></tr>
+<tr><td><code>/engineering-debug</code></td><td>Structured debugging: tái tạo, cô lập, chẩn đoán, sửa lỗi</td></tr>
+<tr><td><code>/engineering-incident</code></td><td>Chạy incident response: triage, communicate, viết postmortem</td></tr>
+<tr><td><code>/engineering-deploy-checklist</code></td><td>Checklist xác minh trước deployment</td></tr>
+</tbody></table></div>
+
+<h5 id="cách-sử-dụng-thực-tế">Cách sử dụng thực tế</h5>
+
+<p><strong>Tình huống: Production incident</strong></p>
+<p class="num-list"><span class="num">1.</span> Bạn nói: "API gateway đang trả 503, khách hàng đang bị ảnh hưởng"</p>
+<p class="num-list"><span class="num">2.</span> Agent kích hoạt <code>incident-response</code>: phân loại severity, đề xuất immediate actions, soạn communication cho stakeholders</p>
+<p class="num-list"><span class="num">3.</span> Sau khi resolve, bạn nói: "Viết postmortem cho sự cố này"</p>
+<p class="num-list"><span class="num">4.</span> Agent tạo postmortem document: timeline, root cause, impact, action items</p>
+
+<hr>
+
+<h3 id="chương-10-phòng-dữ-liệu-data-analytics">Chương 10: Phòng Dữ liệu (Data &amp; Analytics)</h3>
+
+<p>Chương này dành cho <strong>Data Analysts, Data Engineers, BI Analysts và Data Scientists</strong>.</p>
+
+<h4 id="data-skill">Data Skill</h4>
+
+<blockquote>
+<p>Viết SQL, khám phá datasets, tạo insights nhanh hơn. Xây dựng visualizations và dashboards, biến dữ liệu thô thành câu chuyện rõ ràng cho stakeholders.</p>
+</blockquote>
+
+<h5 id="sub-skills">Sub-Skills</h5>
+
+<div class="table-wrap"><table><thead><tr><th>Sub-Skill</th><th>Mô tả</th></tr></thead><tbody>
+<tr><td>data-context-extractor</td><td>Trích xuất context từ dữ liệu có sẵn</td></tr>
+<tr><td>data-exploration</td><td>Profile và khám phá datasets để hiểu shape (hình dạng), quality (chất lượng), và patterns (mẫu) trước khi phân tích</td></tr>
+<tr><td>data-validation</td><td>QA phân tích trước khi chia sẻ: kiểm tra methodology, accuracy verification, bias detection</td></tr>
+<tr><td>data-visualization</td><td>Tạo data visualizations hiệu quả với Python (matplotlib, seaborn, plotly)</td></tr>
+<tr><td>interactive-dashboard-builder</td><td>Xây dựng interactive HTML dashboards với Chart.js, dropdown filters, và professional styling</td></tr>
+<tr><td>sql-queries</td><td>Viết SQL chính xác, tối ưu hiệu suất cho các data warehouse dialects: Snowflake, BigQuery, Databricks, PostgreSQL</td></tr>
+<tr><td>statistical-analysis</td><td>Áp dụng phương pháp thống kê: descriptive stats, trend analysis, outlier detection, hypothesis testing</td></tr>
+</tbody></table></div>
+
+<h5 id="workflows-liên-quan">Workflows liên quan</h5>
+
+<div class="table-wrap"><table><thead><tr><th>Workflow</th><th>Mô tả</th></tr></thead><tbody>
+<tr><td><code>/data-write-query</code></td><td>Viết SQL tối ưu cho dialect cụ thể với best practices</td></tr>
+<tr><td><code>/data-explore-data</code></td><td>Profile và khám phá dataset: shape, quality, patterns</td></tr>
+<tr><td><code>/data-analyze</code></td><td>Trả lời câu hỏi dữ liệu: từ tra cứu nhanh đến phân tích đầy đủ</td></tr>
+<tr><td><code>/data-create-viz</code></td><td>Tạo publication-quality visualizations với Python</td></tr>
+<tr><td><code>/data-build-dashboard</code></td><td>Xây dựng interactive HTML dashboard với charts, filters, tables</td></tr>
+<tr><td><code>/data-validate</code></td><td>QA phân tích trước khi chia sẻ: methodology, accuracy, bias checks</td></tr>
+</tbody></table></div>
+
+<h5 id="cách-sử-dụng-thực-tế">Cách sử dụng thực tế</h5>
+
+<p><strong>Tình huống: Xây dựng dashboard doanh thu</strong></p>
+<ul>
+<li>Bạn nói: "Tạo dashboard theo dõi doanh thu theo tháng, chia theo kênh bán hàng"</li>
+<li>Agent kích hoạt <code>interactive-dashboard-builder</code>: tạo file HTML self-contained với Chart.js, dropdown filters cho kênh và thời gian, bảng chi tiết</li>
+</ul>
+
+<hr>
+
+<h3 id="chương-11-phòng-thiết-kế-design">Chương 11: Phòng Thiết kế (Design)</h3>
+
+<p>Chương này dành cho <strong>UI/UX Designers, Product Designers và Design Leads</strong>.</p>
+
+<h4 id="design-skill">Design Skill</h4>
+
+<blockquote>
+<p>Tăng tốc design workflows: critique (phê bình), design system management (quản lý hệ thống thiết kế), UX writing, accessibility audits (kiểm tra khả năng truy cập), research synthesis (tổng hợp nghiên cứu), và dev handoff. Từ exploration đến pixel-perfect specs.</p>
+</blockquote>
+
+<h5 id="sub-skills">Sub-Skills</h5>
+
+<div class="table-wrap"><table><thead><tr><th>Sub-Skill</th><th>Mô tả</th></tr></thead><tbody>
+<tr><td>accessibility-review</td><td>Audit thiết kế và code theo chuẩn WCAG 2.1 AA. Trigger: "thiết kế này có accessible không", "kiểm tra WCAG"</td></tr>
+<tr><td>design-critique</td><td>Đánh giá thiết kế về usability (khả năng sử dụng), visual hierarchy (thứ bậc thị giác), consistency (tính nhất quán)</td></tr>
+<tr><td>design-handoff</td><td>Tạo tài liệu developer handoff toàn diện từ thiết kế. Trigger: "handoff cho engineering", "developer specs"</td></tr>
+<tr><td>design-system-management</td><td>Quản lý design tokens, component libraries, pattern documentation. Trigger: "design system", "component library"</td></tr>
+<tr><td>user-research</td><td>Lập kế hoạch, thực hiện, tổng hợp user research. Trigger: "user research plan", "interview guide", "usability test"</td></tr>
+<tr><td>ux-writing</td><td>Viết microcopy hiệu quả cho UI. Trigger: "viết copy cho", "nút này nên ghi gì", "error message"</td></tr>
+</tbody></table></div>
+
+<h5 id="workflows-liên-quan">Workflows liên quan</h5>
+
+<div class="table-wrap"><table><thead><tr><th>Workflow</th><th>Mô tả</th></tr></thead><tbody>
+<tr><td><code>/design-critique</code></td><td>Phản hồi có cấu trúc về usability, hierarchy, consistency</td></tr>
+<tr><td><code>/design-design-system</code></td><td>Audit, document, hoặc mở rộng design system</td></tr>
+<tr><td><code>/design-ux-copy</code></td><td>Viết hoặc review UX copy: microcopy, error messages, empty states, CTAs</td></tr>
+<tr><td><code>/design-accessibility</code></td><td>Kiểm tra WCAG accessibility trên thiết kế hoặc trang web</td></tr>
+<tr><td><code>/design-research-synthesis</code></td><td>Tổng hợp user research thành themes, insights, recommendations</td></tr>
+<tr><td><code>/design-handoff</code></td><td>Tạo developer handoff specs từ thiết kế</td></tr>
+</tbody></table></div>
+
+<hr>
+
+<h3 id="chương-12-phòng-tài-chính-finance-accounting">Chương 12: Phòng Tài chính (Finance &amp; Accounting)</h3>
+
+<p>Chương này dành cho <strong>Kế toán, Finance Managers, Auditors và Controllers</strong>.</p>
+
+<h4 id="finance-skill">Finance Skill</h4>
+
+<blockquote>
+<p>Tối ưu quy trình tài chính và kế toán: từ journal entries (bút toán) và reconciliation (đối soát) đến financial statements (báo cáo tài chính) và variance analysis (phân tích chênh lệch). Tăng tốc audit prep (chuẩn bị kiểm toán), month-end close (đóng sổ cuối tháng).</p>
+</blockquote>
+
+<h5 id="sub-skills">Sub-Skills</h5>
+
+<div class="table-wrap"><table><thead><tr><th>Sub-Skill</th><th>Mô tả</th></tr></thead><tbody>
+<tr><td>audit-support</td><td>Hỗ trợ SOX 404 compliance với control testing methodology (phương pháp kiểm tra kiểm soát), sample selection (chọn mẫu), và documentation standards</td></tr>
+<tr><td>close-management</td><td>Quản lý quy trình month-end close với task sequencing (sắp xếp tác vụ), dependencies (phụ thuộc), và status tracking</td></tr>
+<tr><td>financial-statements</td><td>Tạo income statements (báo cáo kết quả kinh doanh), balance sheets (bảng cân đối kế toán), cash flow statements theo chuẩn GAAP với period-over-period comparison</td></tr>
+<tr><td>journal-entry-prep</td><td>Chuẩn bị journal entries với debits, credits chính xác và tài liệu hỗ trợ cho month-end close</td></tr>
+<tr><td>reconciliation</td><td>Đối soát tài khoản bằng cách so sánh GL balances với subledgers, bank statements, hoặc dữ liệu bên thứ ba</td></tr>
+<tr><td>variance-analysis</td><td>Phân tách financial variances (chênh lệch tài chính) thành các drivers với narrative explanations (giải thích tường thuật) và waterfall analysis</td></tr>
+</tbody></table></div>
+
+<h5 id="workflows-liên-quan">Workflows liên quan</h5>
+
+<div class="table-wrap"><table><thead><tr><th>Workflow</th><th>Mô tả</th></tr></thead><tbody>
+<tr><td><code>/finance-journal-entry</code></td><td>Chuẩn bị journal entries với debits, credits, supporting detail</td></tr>
+<tr><td><code>/finance-reconciliation</code></td><td>Đối soát GL balances với subledger, bank, hoặc bên thứ ba</td></tr>
+<tr><td><code>/finance-income-statement</code></td><td>Tạo income statement với period-over-period comparison và variance analysis</td></tr>
+<tr><td><code>/finance-variance-analysis</code></td><td>Phân tích variance thành drivers với narrative và waterfall analysis</td></tr>
+<tr><td><code>/finance-sox-testing</code></td><td>Tạo SOX sample selections, testing workpapers, control assessments</td></tr>
+</tbody></table></div>
+
+<h5 id="cách-sử-dụng-thực-tế">Cách sử dụng thực tế</h5>
+
+<p><strong>Tình huống: Month-end close</strong></p>
+<p class="num-list"><span class="num">1.</span> Bạn nói: "Chuẩn bị journal entry cho accrued expenses tháng 2"</p>
+<p class="num-list"><span class="num">2.</span> Agent kích hoạt <code>journal-entry-prep</code>: liệt kê accounts, debits/credits, supporting documentation</p>
+<p class="num-list"><span class="num">3.</span> Bạn nói: "Đối soát tài khoản ngân hàng với GL"</p>
+<p class="num-list"><span class="num">4.</span> Agent kích hoạt <code>reconciliation</code>: so sánh từng dòng, đánh dấu chênh lệch, đề xuất adjustments</p>
+
+<hr>
+
+<h3 id="chương-13-phòng-pháp-lý-legal">Chương 13: Phòng Pháp lý (Legal)</h3>
+
+<p>Chương này dành cho <strong>In-house Legal Counsel, Paralegals, Legal Operations và Compliance Officers</strong>.</p>
+
+<h4 id="legal-skill">Legal Skill</h4>
+
+<blockquote>
+<p>Tăng tốc contract review (rà soát hợp đồng), NDA triage (phân loại NDA), và compliance workflows cho đội ngũ pháp lý nội bộ. Soạn legal briefs, tổ chức precedent research (nghiên cứu án lệ), quản lý institutional knowledge.</p>
+</blockquote>
+
+<h5 id="sub-skills">Sub-Skills</h5>
+
+<div class="table-wrap"><table><thead><tr><th>Sub-Skill</th><th>Mô tả</th></tr></thead><tbody>
+<tr><td>canned-responses</td><td>Tạo templated responses cho các yêu cầu pháp lý phổ biến, xác định khi nào cần attention riêng</td></tr>
+<tr><td>compliance</td><td>Điều hướng privacy regulations (GDPR, CCPA), review DPAs, xử lý data subject requests</td></tr>
+<tr><td>contract-review</td><td>Rà soát hợp đồng theo negotiation playbook của tổ chức, gắn cờ deviations (sai lệch), tạo redline suggestions</td></tr>
+<tr><td>legal-risk-assessment</td><td>Đánh giá và phân loại legal risks theo severity-by-likelihood framework với escalation criteria</td></tr>
+<tr><td>meeting-briefing</td><td>Chuẩn bị structured briefings cho meetings có tính pháp lý và theo dõi action items</td></tr>
+<tr><td>nda-triage</td><td>Sàng lọc NDA và phân loại: GREEN (tiêu chuẩn), YELLOW (cần review), RED (vấn đề nghiêm trọng)</td></tr>
+</tbody></table></div>
+
+<h5 id="workflows-liên-quan">Workflows liên quan</h5>
+
+<div class="table-wrap"><table><thead><tr><th>Workflow</th><th>Mô tả</th></tr></thead><tbody>
+<tr><td><code>/legal-review-contract</code></td><td>Rà soát hợp đồng theo playbook: flag deviations, redlines, business impact</td></tr>
+<tr><td><code>/legal-triage-nda</code></td><td>Phân loại NDA nhanh: standard approval, counsel review, full legal review</td></tr>
+<tr><td><code>/legal-compliance-check</code></td><td>Kiểm tra compliance cho action, feature, hoặc sáng kiến kinh doanh</td></tr>
+<tr><td><code>/legal-brief</code></td><td>Tạo briefing cho legal work: daily summary, topic research, incident response</td></tr>
+<tr><td><code>/legal-respond</code></td><td>Soạn phản hồi cho yêu cầu pháp lý phổ biến</td></tr>
+<tr><td><code>/legal-signature-request</code></td><td>Chuẩn bị và chuyển tài liệu cho e-signature</td></tr>
+<tr><td><code>/legal-vendor-check</code></td><td>Kiểm tra trạng thái thỏa thuận hiện có với vendor</td></tr>
+</tbody></table></div>
+
+<h5 id="cách-sử-dụng-thực-tế">Cách sử dụng thực tế</h5>
+
+<p><strong>Tình huống: NDA mới từ vendor</strong></p>
+<ul>
+<li>Bạn nói: "Triage NDA này từ công ty ABC"</li>
+<li>Agent kích hoạt <code>nda-triage</code>: sàng lọc các điều khoản, phân loại GREEN/YELLOW/RED, highlight các điều khoản cần chú ý, đề xuất next steps</li>
+</ul>
+
+<hr>
+
+<h3 id="chương-14-phòng-nhân-sự-và-vận-hành-hr-operations">Chương 14: Phòng Nhân sự và Vận hành (HR &amp; Operations)</h3>
+
+<p>Chương này dành cho <strong>HR Managers, People Ops, Operations Managers và Business Process Owners</strong>.</p>
+
+<h4 id="141-human-resources-skill">14.1 Human Resources Skill</h4>
+
+<blockquote>
+<p>Tối ưu people operations: tuyển dụng, onboarding (đào tạo hội nhập), performance reviews (đánh giá hiệu suất), compensation analysis (phân tích lương thưởng), và policy guidance (hướng dẫn chính sách). Duy trì compliance và giữ team vận hành trơn tru.</p>
+</blockquote>
+
+<h5 id="sub-skills">Sub-Skills</h5>
+
+<div class="table-wrap"><table><thead><tr><th>Sub-Skill</th><th>Mô tả</th></tr></thead><tbody>
+<tr><td>compensation-benchmarking</td><td>Benchmark lương thưởng theo dữ liệu thị trường. Trigger: "nên trả bao nhiêu", "comp benchmark", "mức lương thị trường"</td></tr>
+<tr><td>employee-handbook</td><td>Trả lời câu hỏi về chính sách công ty, phúc lợi, quy trình. Trigger: "chính sách về X", "PTO hoạt động thế nào"</td></tr>
+<tr><td>interview-prep</td><td>Tạo kế hoạch interview có cấu trúc với competency-based questions và scorecards</td></tr>
+<tr><td>org-planning</td><td>Headcount planning (lập kế hoạch nhân sự), org design, team structure optimization</td></tr>
+<tr><td>people-analytics</td><td>Phân tích workforce data: attrition (tỷ lệ nghỉ việc), engagement, diversity, productivity</td></tr>
+<tr><td>recruiting-pipeline</td><td>Theo dõi và quản lý recruiting pipeline stages. Trigger: "cập nhật tuyển dụng", "bao nhiêu candidate"</td></tr>
+</tbody></table></div>
+
+<h5 id="workflows-liên-quan">Workflows liên quan</h5>
+
+<div class="table-wrap"><table><thead><tr><th>Workflow</th><th>Mô tả</th></tr></thead><tbody>
+<tr><td><code>/human-resources-onboarding</code></td><td>Tạo onboarding checklist và kế hoạch tuần đầu cho nhân viên mới</td></tr>
+<tr><td><code>/human-resources-performance-review</code></td><td>Cấu trúc performance review: self-assessment, manager template, calibration prep</td></tr>
+<tr><td><code>/human-resources-comp-analysis</code></td><td>Phân tích compensation: benchmarking, band placement, equity modeling</td></tr>
+<tr><td><code>/human-resources-draft-offer</code></td><td>Soạn offer letter với comp details và terms</td></tr>
+<tr><td><code>/human-resources-people-report</code></td><td>Tạo báo cáo headcount, attrition, diversity, org health</td></tr>
+<tr><td><code>/human-resources-policy-lookup</code></td><td>Tìm và giải thích company policies</td></tr>
+</tbody></table></div>
+
+<hr>
+
+<h4 id="142-operations-skill">14.2 Operations Skill</h4>
+
+<blockquote>
+<p>Tối ưu vận hành doanh nghiệp: vendor management (quản lý nhà cung cấp), process documentation (tài liệu quy trình), change management (quản lý thay đổi), capacity planning (lập kế hoạch năng lực), compliance tracking. Giữ tổ chức hoạt động hiệu quả.</p>
+</blockquote>
+
+<h5 id="sub-skills">Sub-Skills</h5>
+
+<div class="table-wrap"><table><thead><tr><th>Sub-Skill</th><th>Mô tả</th></tr></thead><tbody>
+<tr><td>change-management</td><td>Lập kế hoạch và thực hiện thay đổi tổ chức hoặc kỹ thuật. Trigger: "đang thay đổi X", "kế hoạch migration"</td></tr>
+<tr><td>compliance-tracking</td><td>Theo dõi yêu cầu compliance và audit readiness. Trigger: "compliance", "audit prep", "SOC 2", "ISO 27001"</td></tr>
+<tr><td>process-optimization</td><td>Phân tích và cải thiện quy trình kinh doanh. Trigger: "quy trình này chậm", "cải thiện thế nào"</td></tr>
+<tr><td>resource-planning</td><td>Lập kế hoạch và tối ưu phân bổ nguồn lực. Trigger: "resource planning", "capacity", "staffing plan"</td></tr>
+<tr><td>risk-assessment</td><td>Xác định, đánh giá, giảm thiểu rủi ro vận hành. Trigger: "rủi ro là gì", "risk assessment"</td></tr>
+<tr><td>vendor-management</td><td>Đánh giá, so sánh, quản lý vendor relationships. Trigger: "đánh giá vendor này", "so sánh vendors"</td></tr>
+</tbody></table></div>
+
+<h5 id="workflows-liên-quan">Workflows liên quan</h5>
+
+<div class="table-wrap"><table><thead><tr><th>Workflow</th><th>Mô tả</th></tr></thead><tbody>
+<tr><td><code>/operations-process-doc</code></td><td>Tài liệu quy trình kinh doanh: flowcharts, RACI, SOPs</td></tr>
+<tr><td><code>/operations-vendor-review</code></td><td>Đánh giá vendor: cost analysis, risk assessment, recommendation</td></tr>
+<tr><td><code>/operations-change-request</code></td><td>Tạo change management request với impact analysis và rollback plan</td></tr>
+<tr><td><code>/operations-capacity-plan</code></td><td>Lập kế hoạch capacity: workload analysis và utilization forecasting</td></tr>
+<tr><td><code>/operations-status-report</code></td><td>Tạo status report với KPIs, risks, action items</td></tr>
+<tr><td><code>/operations-runbook</code></td><td>Tạo hoặc cập nhật operational runbook</td></tr>
+</tbody></table></div>
+
+<hr>
+
+<h2 id="part-iii-nâng-cao">PART III: NÂNG CAO</h2>
+
+<hr>
+
+<h3 id="chương-15-phòng-nghiên-cứu-bio-research">Chương 15: Phòng Nghiên cứu (Bio-Research)</h3>
+
+<p>Chương này dành cho <strong>Scientists, Bioinformaticians và Research Associates</strong> trong lĩnh vực life sciences.</p>
+
+<h4 id="bio-research-skill">Bio-Research Skill</h4>
+
+<blockquote>
+<p>Kết nối với các công cụ nghiên cứu preclinical (tiền lâm sàng) và cơ sở dữ liệu: literature search (tìm kiếm tài liệu), genomics analysis (phân tích gen), target prioritization (ưu tiên hóa mục tiêu) để tăng tốc R&amp;D giai đoạn đầu.</p>
+</blockquote>
+
+<h5 id="sub-skills">Sub-Skills</h5>
+
+<div class="table-wrap"><table><thead><tr><th>Sub-Skill</th><th>Mô tả</th></tr></thead><tbody>
+<tr><td>instrument-data-to-allotrope</td><td>Chuyển đổi file output từ thiết bị phòng thí nghiệm (PDF, CSV, Excel, TXT) sang Allotrope Simple Model (ASM) JSON format</td></tr>
+<tr><td>nextflow-development</td><td>Chạy nf-core bioinformatics pipelines (rnaseq, sarek, atacseq) trên sequencing data</td></tr>
+<tr><td>scientific-problem-selection</td><td>Hỗ trợ lựa chọn vấn đề nghiên cứu, project ideation, troubleshooting</td></tr>
+<tr><td>scvi-tools</td><td>Deep learning cho phân tích single-cell sử dụng scvi-tools: data integration, cell annotation, differential expression</td></tr>
+<tr><td>single-cell-rna-qc</td><td>Kiểm tra chất lượng dữ liệu single-cell RNA-seq (.h5ad hoặc .h5) theo scverse best practices</td></tr>
+</tbody></table></div>
+
+<h5 id="workflow-liên-quan">Workflow liên quan</h5>
+
+<ul>
+<li><code>/bio-research-start</code> - Thiết lập môi trường bio-research và khám phá các công cụ có sẵn</li>
+</ul>
+
+<hr>
+
+<h3 id="chương-16-tùy-chỉnh-và-tạo-skills-mới-plugin-creator">Chương 16: Tùy chỉnh và Tạo Skills mới (Plugin Creator)</h3>
+
+<p>Chương này dành cho <strong>AI Engineers, DevOps và bất kỳ ai muốn mở rộng hệ thống</strong>.</p>
+
+<h4 id="plugin-creator-skill">Plugin Creator Skill</h4>
+
+<blockquote>
+<p>Tạo, tùy chỉnh, và quản lý AI agent skills và workflows. Cấu hình MCP servers, điều chỉnh hành vi, và thích ứng templates cho phù hợp công cụ và quy trình của team.</p>
+</blockquote>
+
+<h5 id="sub-skills">Sub-Skills</h5>
+
+<div class="table-wrap"><table><thead><tr><th>Sub-Skill</th><th>Mô tả</th></tr></thead><tbody>
+<tr><td>skill-customizer</td><td>Tùy chỉnh skills hiện có cho tổ chức: đổi connectors, thêm company context, điều chỉnh workflows</td></tr>
+<tr><td>create-skill</td><td>Tạo skills mới từ đầu theo chuẩn Antigravity skill engineering</td></tr>
+</tbody></table></div>
+
+<h5 id="cấu-trúc-skill-antigravity-format">Cấu trúc Skill (Antigravity Format)</h5>
+
+<pre><code>
+.agents/skills/
+└── skill-name/
+    ├── SKILL.md              (&lt; 150 dòng, bắt buộc)
+    │   ├── YAML frontmatter  (name, description)
+    │   └── Core instructions
+    ├── references/           (tài liệu chi tiết, &lt; 150 dòng mỗi file)
+    └── scripts/              (script tiện ích)
+</code></pre>
+
+<h5 id="cấu-trúc-workflow">Cấu trúc Workflow</h5>
+
+<pre><code>
+.agents/workflows/
+└── workflow-name.md          (slash commands tường minh)
+    ├── YAML frontmatter      (description)
+    └── Hướng dẫn từng bước
+</code></pre>
+
+<hr>
+
+<h2 id="part-iv-phụ-lục">PART IV: PHỤ LỤC</h2>
+
+<hr>
+
+<h3 id="phụ-lục-a-bảng-tra-cứu-nhanh-toàn-bộ-skills">Phụ lục A: Bảng tra cứu nhanh toàn bộ Skills</h3>
+
+<div class="table-wrap"><table><thead><tr><th>#</th><th>Skill</th><th>Sub-Skills</th><th>Workflows</th><th>Phòng ban</th></tr></thead><tbody>
+<tr><td>1</td><td>productivity</td><td>2</td><td>2</td><td>Tất cả</td></tr>
+<tr><td>2</td><td>enterprise-search</td><td>3</td><td>2</td><td>Tất cả</td></tr>
+<tr><td>3</td><td>sales</td><td>6</td><td>3</td><td>Kinh doanh</td></tr>
+<tr><td>4</td><td>marketing</td><td>5</td><td>7</td><td>Marketing</td></tr>
+<tr><td>5</td><td>customer-support</td><td>5</td><td>5</td><td>CSKH</td></tr>
+<tr><td>6</td><td>product-management</td><td>6</td><td>7</td><td>Sản phẩm</td></tr>
+<tr><td>7</td><td>engineering</td><td>6</td><td>6</td><td>Kỹ thuật</td></tr>
+<tr><td>8</td><td>data</td><td>7</td><td>6</td><td>Dữ liệu</td></tr>
+<tr><td>9</td><td>design</td><td>6</td><td>6</td><td>Thiết kế</td></tr>
+<tr><td>10</td><td>finance</td><td>6</td><td>5</td><td>Tài chính</td></tr>
+<tr><td>11</td><td>legal</td><td>6</td><td>7</td><td>Pháp lý</td></tr>
+<tr><td>12</td><td>human-resources</td><td>6</td><td>6</td><td>Nhân sự</td></tr>
+<tr><td>13</td><td>operations</td><td>6</td><td>6</td><td>Vận hành</td></tr>
+<tr><td>14</td><td>bio-research</td><td>5</td><td>1</td><td>Nghiên cứu</td></tr>
+<tr><td>15</td><td>plugin-creator</td><td>2</td><td>0</td><td>Admin/IT</td></tr>
+<tr><td></td><td><strong>Tổng cộng</strong></td><td><strong>77</strong></td><td><strong>69</strong></td><td></td></tr>
+</tbody></table></div>
+
+<h3 id="phụ-lục-b-bảng-thuật-ngữ">Phụ lục B: Bảng thuật ngữ</h3>
+
+<div class="table-wrap"><table><thead><tr><th>Thuật ngữ</th><th>Giải thích</th></tr></thead><tbody>
+<tr><td>Skill</td><td>Kỹ năng chuyên môn mà AI Agent sở hữu, bao gồm nhiều Sub-Skills</td></tr>
+<tr><td>Sub-Skill</td><td>Kỹ năng con chuyên biệt trong một Skill</td></tr>
+<tr><td>Workflow</td><td>Quy trình thực thi từng bước, kích hoạt qua slash command hoặc ngôn ngữ tự nhiên</td></tr>
+<tr><td>Connector</td><td>Kết nối với công cụ bên ngoài qua MCP (Model Context Protocol)</td></tr>
+<tr><td>MCP Server</td><td>Máy chủ trung gian để AI Agent giao tiếp với công cụ bên ngoài</td></tr>
+<tr><td>GEMINI.md</td><td>File hot cache cho Memory Management trên Antigravity</td></tr>
+<tr><td>Progressive Disclosure</td><td>Nguyên tắc tiết lộ thông tin dần dần theo nhu cầu</td></tr>
+<tr><td>Trigger</td><td>Điều kiện kích hoạt một Skill hoặc Sub-Skill</td></tr>
+<tr><td>Battlecard</td><td>Thẻ đối chiến so sánh sản phẩm với đối thủ cạnh tranh</td></tr>
+<tr><td>PRD</td><td>Product Requirements Document - Tài liệu yêu cầu sản phẩm</td></tr>
+<tr><td>RACI</td><td>Responsible, Accountable, Consulted, Informed - Ma trận phân công trách nhiệm</td></tr>
+<tr><td>SOX</td><td>Sarbanes-Oxley Act - Luật quản trị doanh nghiệp Mỹ</td></tr>
+<tr><td>WCAG</td><td>Web Content Accessibility Guidelines - Hướng dẫn khả năng truy cập nội dung web</td></tr>
+<tr><td>NDA</td><td>Non-Disclosure Agreement - Thỏa thuận bảo mật</td></tr>
+<tr><td>DPA</td><td>Data Processing Agreement - Thỏa thuận xử lý dữ liệu</td></tr>
+</tbody></table></div>
+
+<h3 id="phụ-lục-c-faq-câu-hỏi-thường-gặp">Phụ lục C: FAQ (Câu hỏi thường gặp)</h3>
+
+<p><strong>Có cần kết nối tất cả connectors mới dùng được không?</strong></p>
+<p>Không. Mỗi Skill đều hoạt động standalone (độc lập) với web search và input từ người dùng. Connectors giúp tăng sức mạnh nhưng không bắt buộc.</p>
+
+<p><strong>Tôi có thể tạo Skill mới cho phòng ban riêng không?</strong></p>
+<p>Có. Sử dụng Plugin Creator Skill (Chương 16) để tạo Skills tùy chỉnh theo quy trình đặc thù của tổ chức bạn.</p>
+
+<p><strong>Memory Management lưu ở đâu?</strong></p>
+<p>File <code>GEMINI.md</code> và thư mục <code>memory/</code> nằm trong thư mục gốc của dự án. Đây là bộ nhớ cục bộ, không upload lên cloud.</p>
+
+<p><strong>Làm sao biết Skill nào đang được kích hoạt?</strong></p>
+<p>AI Agent sẽ tự động nhận diện Skill phù hợp dựa trên trigger conditions. Bạn cũng có thể gọi trực tiếp bằng tên Workflow (ví dụ: "chạy workflow sales-call-summary").</p>
+
+<p><strong>Sách này có áp dụng cho platform nào khác ngoài Antigravity không?</strong></p>
+<p>Bộ Skills và Workflows được thiết kế cho nền tảng Antigravity (Google AI IDE) sử dụng cấu trúc <code>.agents/</code>. Tuy nhiên, nội dung chuyên môn trong từng Skill có thể tham khảo cho bất kỳ AI Agent platform nào hỗ trợ MCP.</p>
+
+<hr>
+
+<blockquote>
+<p><strong>Antigravity Knowledge Work Kit</strong> - v2.0</p>
+<p>Biên soạn bởi Minh Đỗ</p>
+</blockquote>
+
+<div class="footer">
+  <p><strong>Antigravity Knowledge Work Kit</strong> - v2.0</p>
+  <p>Biên soạn bởi <a href="https://zalo.me/g/igkywu632" target="_blank">Minh Do</a></p>
+</div>
+</main>
+
+<script>
+// Scroll spy
+const links=document.querySelectorAll('.toc-link');
+const headings=[];
+links.forEach(l=>{
+  const id=l.getAttribute('href');
+  if(id&&id.startsWith('#')){
+    const el=document.getElementById(id.slice(1));
+    if(el)headings.push({el,link:l});
+  }
+});
+let ticking=false;
+let lastActive=null;
+window.addEventListener('scroll',()=>{
+  if(!ticking){
+    requestAnimationFrame(()=>{
+      let current=null;
+      headings.forEach(h=>{
+        if(h.el.getBoundingClientRect().top<=100)current=h;
+      });
+      links.forEach(l=>l.classList.remove('active'));
+      if(current){
+        current.link.classList.add('active');
+        if(lastActive!==current.link){
+          current.link.scrollIntoView({behavior:'smooth',block:'nearest'});
+          lastActive=current.link;
+        }
+      }
+      ticking=false;
+    });
+    ticking=true;
+  }
+});
+// Close mobile menu on link click
+links.forEach(l=>l.addEventListener('click',()=>{
+  document.querySelector('.sidebar').classList.remove('open');
+}));
+// Scroll to top button visibility
+const scrollBtn=document.getElementById('scrollTopBtn');
+window.addEventListener('scroll',()=>{
+  if(window.scrollY>400)scrollBtn.classList.add('visible');
+  else scrollBtn.classList.remove('visible');
+});
+</script>
+</body>
+</html>
